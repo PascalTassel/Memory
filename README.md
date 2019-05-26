@@ -21,7 +21,7 @@ Compilez les fichiers .scss à partir du fichier **assets/css/config.rb**.
 
 ## Fonctionnalités
 
-Éditez les différents paramètres de l'application et de ses composants depuis le fichier **assets/js/memory.js**.
+Éditez les différents paramètres du jeu et de ses composants depuis le fichier **assets/js/memory.js**.
 
 Par défaut, la durée d'une partie est de 10 minutes.
 
