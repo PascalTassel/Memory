@@ -1,5 +1,5 @@
 const $app = {
-  'dev_mode' :          false            // Permet d'afficher la valeur au dos des cartes
+  'dev_mode' :          true            // Permet d'afficher la valeur au dos des cartes
 };
 
 const $memory = {
@@ -8,6 +8,12 @@ const $memory = {
   'elem' :              '#cards',       // Élément du DOM contenant les cartes
   'flip_duration' :     500,            // Durée de l'animation CSS lorsque la carte se retourne - valeur identique à celle définie dans le CSS sur l'élément <li> (en millisecondes)
   'nb_cards' :          18,             // Nombre initial de cartes
+  'cards_values' :                      // Valeur des cartes (déclarées selon l'ordre défini dans assets/cards.png)
+  ['red apple', 'banana', 'orange', 'green lemon', 'pomegranate',
+    'apricot', 'yellow lemon', 'strawberry', 'green apple', 'peach',
+    'grapes', 'watermelon', 'plum', 'pear', 'red cherries', 'raspberry',
+    'mango', 'yellow cherries'],
+  'bg_card_increment' : 100,            // incrémentation de l'image de fond (en pixels)
   'nb_occurences' :     2               // Nombre de cartes identiques à retourner pour scorer
 };
 
@@ -46,14 +52,12 @@ $memory.init = function(){
   this.nb_visible_cards = 0;
   // Tableau dans lequel seront insérées les cartes
   var $cards = [];
-  // Valeurs des cartes (ordre reprenant celui de l'image de fond)
-  var $values = ['red apple', 'banana', 'orange', 'green lemon', 'pomegranate', 'apricot', 'yellow lemon', 'strawberry', 'green apple', 'peach', 'grapes', 'watermelon', 'plum', 'pear', 'red cherries', 'raspberry', 'mango', 'yellow cherries'];
   // Création des cartes
   for(var $i = 0; $i < this.nb_cards; $i ++){
     // Création d'un objet carte avec ses paramètres
     var $card = {
-      'value' :       $values[$i],                // Valeur de la carte
-      'bg_position' : '0px ' + (-100 * $i) + 'px' // Ajustement vertical de l'image d'arrière-plan
+      'value' :       this.cards_values[$i],                // Valeur de la carte
+      'bg_position' : '0px ' + ((this.bg_card_increment * -1) * $i) + 'px' // Ajustement vertical de l'image d'arrière-plan
     };
     // Ajout de la carte dans le tableau des cartes
     $cards.push($card);
