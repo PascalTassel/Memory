@@ -1,0 +1,108 @@
+#cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  // Compenser la marge supérieure des cartes
+  margin: ($card-spacing / 2) 0;
+  // Forcer un affichage sur 4 colonnes maximum
+  max-width: ($card-width-computed  + $card-spacing) * 4;
+
+  // Éviter un affichage sur 7 ou 8 colonnes
+  @media (min-width: (($card-width-computed  + $card-spacing) * 7)) and (max-width: ((($card-width-computed  + $card-spacing) * 9))){
+    max-width: ($card-width-computed  + $card-spacing) * 6;
+  }
+
+  // Forcer un affichage sur 9 colonnes
+  @media (min-width: ((($card-width-computed  + $card-spacing) * 9))){
+    max-width: none;
+    width: ($card-width-computed  + $card-spacing) * 9;
+  }
+
+  li{
+    position: relative;
+    display: block;
+    flex: 0 0 $card-width-computed;
+    padding: $card-padding;
+    margin: ($card-spacing / 2);
+    border-radius: $card-radius;
+    background-color: $card-back-border-color;
+    box-shadow: $card-shadow;
+    cursor: pointer;
+    transition: transform 500ms, opacity 200ms;
+    transform-style: preserve-3d;
+
+    &::after{
+      display: block;
+      content: "";
+      padding-top: 100%;
+    }
+
+    &:active{
+      transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+    }
+
+    .back,
+    .front{
+      position: absolute;
+      top: $card-padding;
+      left: $card-padding;
+      width: calc(100% - #{$card-padding * 2});
+      height: calc(100% - #{$card-padding * 2});
+      backface-visibility: hidden;
+    }
+
+    .back{
+      background: $card-back-bg-color $card-back-bg-pattern;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 1px 1px #000;
+    }
+
+    .front{
+      background-image: url(../im/cards.png);
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+    }
+
+    &.is-flipped{
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      cursor: default;
+    }
+
+    &.is-disabled{
+      opacity: .8;
+      cursor: default;
+
+      &:active{
+        transform: none;
+        -webkit-transform: none;
+      }
+    }
+
+    &.blink .front{
+      animation: card-blink 200ms;
+      -webkit-animation: card-blink 200ms;
+    }
+  }
+}
+
+@keyframes card-blink{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+@webkit-keyframes card-blink{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}

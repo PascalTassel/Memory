@@ -1,0 +1,40 @@
+// Reboot
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: $font-size-base;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section{
+  display: block;
+}
+
+body{
+  margin: 0;
+  font-family: $font-family;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.42;
+  text-align: left;
+  background: $body-bg-color $body-bg-pattern;
+}
+
+p, ul{
+  margin-top: 0;
+  margin-bottom: 1.42;
+}
