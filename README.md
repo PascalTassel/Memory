@@ -17,7 +17,13 @@ Modifiez si besoin les paramètres de connexion définis dans le constructeur de
 
 ### Css
 
-Compilez les fichiers .scss à partir de **assets/css/config.rb**.
+Compilez les fichiers .scss à partir du fichier **assets/css/config.rb**.
+
+## Fonctionnalités
+
+Éditez les différents paramètres de l'application et de ses composants depuis le fichier **assets/js/memory.js**.
+
+Par défaut, la durée d'une partie est de 10 minutes.
 
 #### Auteur
 
