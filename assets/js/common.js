@@ -29,8 +29,7 @@ const $progress = {
 
 const $alert = {
   'elem' :              '#alert',     // Élément du DOM correspondant à l'alerte
-  'display_ranking' :   true,         // Affichage des meilleurs scores en début de partie
-  'ranking_duration' :  6             // Durée d'affichage des meilleurs scores en début de partie (en secondes)
+  'display_ranking' :   true         // Affichage des meilleurs scores en début de partie
 };
 
 const $datas = {
@@ -316,15 +315,8 @@ $alert.hide = function(){
 };
 
 // Afficher du contenu dans l'alerte
-$alert.show = function($content, $callback, $delay){
+$alert.show = function($content){
   $(this.elem).append($content).parent('#overlay').addClass('show');
-
-  if(typeof $callback != 'undefined'){
-    setTimeout(function(){
-      $alert.hide();
-      $callback();
-    }, $delay * 1000);
-  }
 };
 
 // Alerte du classement des meilleurs scores
@@ -347,9 +339,11 @@ $alert.ranking = function($ranking_array){
       $content +=
       '</tbody>' +
     '</table>';
+    // Ajout dun bouton jouer
+    $content += '<p><button type="button" onclick="$alert.hide();$memory.start()">Jouer</button></p>';
 
-    // Affichage du classement dans l'alerte et lancement du jeu en callback
-    this.show($content, $memory.start, $alert.ranking_duration);
+    // Affichage du classement dans l'alerte
+    this.show($content);
 };
 
 // Alerte en cas de victoire
