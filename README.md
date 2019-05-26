@@ -13,7 +13,7 @@ Récupérez une copie du projet et placez-le dans le répertoire /www de votre s
 
 Importez la base de données dans phpMyAdmin à partir du fichier **memory.sql**. La table scores contient un enregistrement permettant d'afficher le classement lors du premier lancement.
 
-Modifiez si besoin les paramètres de connexion définis dans le constructeur de la class Datas.
+Modifiez si besoin les paramètres de connexion définis dans le constructeur de la class Datas, depuis **datas.php**.
 
 ### Css
 
@@ -23,7 +23,44 @@ Compilez les fichiers .scss à partir du fichier **assets/css/config.rb**.
 
 Éditez les différents paramètres du jeu et de ses composants depuis le fichier **assets/js/memory.js**.
 
-Par défaut, la durée d'une partie est de 10 minutes.
+Retrouvez ci-dessous la liste des paramètres
+
+```
+const $app = {
+  dev_mode** :          false            // Permet d'afficher la valeur au dos des cartes
+};
+
+const $memory = {
+  'duration' :          600,            // Temps imparti (en secondes)
+  'visible_duration' :  2,              // Durée de visibilité d'une carte avant son retournement (en secondes)
+  'elem' :              '#cards',       // Élément du DOM contenant les cartes
+  'flip_duration' :     500,            // Durée de l'animation CSS lorsque la carte se retourne
+  'nb_cards' :          18,             // Nombre initial de cartes
+  'nb_occurences' :     2               // Nombre de cartes identiques à retourner pour scorer
+};
+
+const $counter = {
+  'count_up_elem' :     '#count-up',    // Élément du DOM correspondant au temps écoulé
+  'duration_elem' :     '#duration',    // Élément du DOM correspondant au temps imparti
+  'elapsed_time' :      0               // Temps écoulé
+};
+
+const $progress = {
+  'elem' :              '.bar'         // Élément du DOM correspondant à la barre de progression
+};
+
+const $alert = {
+  'elem' :              '#alert',     // Élément du DOM correspondant à l'alerte
+  'display_ranking' :   true,         // Affichage des meilleurs scores en début de partie
+  'ranking_duration' :  6             // Durée d'affichage des meilleurs scores en début de partie (en secondes)
+};
+
+const $datas = {
+  'path' :              'datas.php',  // Chemin d'accès au fichier de récupération des données
+  'ranking_limit' :     5             // Nombre de résultats à afficher dans le tableau des meilleurs scores
+}
+
+```
 
 #### Auteur
 
