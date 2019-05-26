@@ -11,14 +11,14 @@ Récupérez une copie du projet et placez-le dans le répertoire /www de votre s
 
 ### Base de données
 
-Importez la base de données dans phpMyAdmin à partir du fichier memory.sql. La table scores contient un enregistrement permettant d'afficher le classement lors du premier lancement.
+Importez la base de données dans phpMyAdmin à partir du fichier **memory.sql**. La table scores contient un enregistrement permettant d'afficher le classement lors du premier lancement.
 
 Modifiez si besoin les paramètres de connexion définis dans le constructeur de la class Datas.
 
 ### Css
 
-Compilez les fichiers .scss à partir de assets/css/config.rb.
+Compilez les fichiers .scss à partir de **assets/css/config.rb**.
 
 #### Auteur
 
-* **Pascal Tassel**
+Pascal Tassel
