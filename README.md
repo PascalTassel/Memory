@@ -23,7 +23,7 @@ Compilez les fichiers .scss à partir du fichier **assets/css/config.rb**.
 
 Éditez les différents paramètres du jeu et de ses composants depuis le fichier **assets/js/memory.js**.
 
-Retrouvez ci-dessous la liste des paramètres
+Retrouvez ci-dessous la liste des paramètres :
 
 ```
 const $app = {
@@ -31,8 +31,8 @@ const $app = {
 };
 
 const $memory = {
-  'duration' :          600,            // Temps imparti (en secondes)
-  'visible_duration' :  2,              // Durée de visibilité d'une carte avant son retournement (en secondes)
+  'duration' :          600,            // Temps imparti (sec.)
+  'visible_duration' :  2,              // Durée de visibilité d'une carte avant son retournement (sec.)
   'elem' :              '#cards',       // Élément du DOM contenant les cartes
   'flip_duration' :     500,            // Durée de l'animation CSS lorsque la carte se retourne
   'nb_cards' :          18,             // Nombre initial de cartes
@@ -52,7 +52,7 @@ const $progress = {
 const $alert = {
   'elem' :              '#alert',     // Élément du DOM correspondant à l'alerte
   'display_ranking' :   true,         // Affichage des meilleurs scores en début de partie
-  'ranking_duration' :  6             // Durée d'affichage des meilleurs scores en début de partie (en secondes)
+  'ranking_duration' :  6             // Durée d'affichage des meilleurs scores en début de partie (sec.)
 };
 
 const $datas = {
