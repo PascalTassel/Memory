@@ -28,3 +28,7 @@ Par défaut, la durée d'une partie est de 10 minutes.
 #### Auteur
 
 Pascal Tassel
+
+#### Environnement de travail
+
+Wampserver 3.1.7 sur Windows 10.
