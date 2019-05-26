@@ -21,7 +21,7 @@ Compilez les fichiers .scss à partir du fichier **assets/css/config.rb**.
 
 ## Fonctionnalités
 
-Éditez les différents paramètres du jeu et de ses composants depuis le fichier **assets/js/memory.js**.
+Éditez les différents paramètres du jeu et de ses composants depuis le fichier **assets/js/common.js**.
 
 Retrouvez ci-dessous la liste des paramètres :
 
@@ -36,6 +36,12 @@ const $memory = {
   'elem' :              '#cards',       // Élément du DOM contenant les cartes
   'flip_duration' :     500,            // Durée de l'animation CSS lorsque la carte se retourne
   'nb_cards' :          18,             // Nombre initial de cartes
+  'cards_values' :                      // Valeur des cartes (déclarées selon l'ordre défini dans assets/cards.png)
+  ['red apple', 'banana', 'orange', 'green lemon', 'pomegranate',
+    'apricot', 'yellow lemon', 'strawberry', 'green apple', 'peach',
+    'grapes', 'watermelon', 'plum', 'pear', 'red cherries', 'raspberry',
+    'mango', 'yellow cherries'],
+  'bg_card_increment' : 100,            // incrémentation de l'image de fond (en pixels)
   'nb_occurences' :     2               // Nombre de cartes identiques à retourner pour scorer
 };
 
