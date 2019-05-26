@@ -27,7 +27,7 @@ Retrouvez ci-dessous la liste des paramètres
 
 ```
 const $app = {
-  dev_mode** :          false            // Permet d'afficher la valeur au dos des cartes
+  dev_mode :          false            // Permet d'afficher la valeur au dos des cartes
 };
 
 const $memory = {
