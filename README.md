@@ -21,7 +21,7 @@ Compilez les fichiers .scss à partir du fichier **assets/css/config.rb**.
 
 ## Fonctionnalités
 
-Éditez les différents paramètres du jeu et de ses composants depuis le fichier **assets/js/memory.js**.
+Éditez les différents paramètres du jeu et de ses composants depuis le fichier **assets/js/common.js**.
 
 Retrouvez ci-dessous la liste des paramètres :
 
