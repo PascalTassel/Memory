@@ -3,6 +3,7 @@
 class Datas{
 
   // Constructeur de la classe, dans lequel est initialisé la connexion à la bdd
+  // Connexion établie à partir de l'extension PDO de Php
   function __construct(){
 
     // Paramètres de connexion à la bdd
@@ -23,11 +24,12 @@ class Datas{
 
     // Si la connexion provoque une erreur
     try {
-      // Connexion PDO à la bdd
+      // Création d'une instance de la classe PDO permettant d'accéder ensuite à la bdd via $this->db
       $this->db = new PDO($dsn, $user, $pass, $opts);
 
-    // Affichage du message d'erreur de connexion
+    // Sinon, capture du message d'erreur
     } catch (Exception $e) {
+      // Affichage du message
       die('Erreur de connexion : '.$e->getMessage());
     }
 
@@ -36,14 +38,14 @@ class Datas{
   /*
   * Récupère les meilleurs scores
   * @param int $limit Nombre de scores à retourner
-  * @return boolean
+  * @return array Résultats de la requête
   */
   public function get_ranking($limit){
     // Écriture de la requête comprenant le marqueur nommé :limit permettant de définir le nombre d'enregistrements à retourner
     $sql = "SELECT id, seconds, DATE_FORMAT(date, '%d/%m/%Y %H:%i') AS date FROM `scores` ORDER BY seconds ASC LIMIT :limit";
     // Création d'un objet statement préparant la reqête avant substitution du marqueur
     $stmt = $this->db->prepare($sql);
-    // Association de la variable $limit au marqueur :limit, variable de type integer
+    // Remplacement du marqueur :limit par la variable $limit, de type integer
     $stmt->bindValue(':limit', (int) $limit, PDO::PARAM_INT);
     // Exécution de la requête
     $stmt->execute();
@@ -64,14 +66,14 @@ class Datas{
     $id = uniqid();
     // Création d'un objet statement préparant la reqête avant substitution des marqueurs
     $stmt = $this->db->prepare($sql);
-    // Association de la variable $id au marqueur :id, variable de type string
+    // Remplacement du marqueur :id par la variable $id, de type string
     $stmt->bindValue(':id', $id, PDO::PARAM_STR);
-    // Association de la variable $seconds au marqueur :seconds, variable de type integer
+    // Remplacement du marqueur :seconds par la variable $seconds, de type integer
     $stmt->bindValue(':seconds', (int) $seconds, PDO::PARAM_INT);
     // Exécution de la requête
     $stmt->execute();
 
-    // Récupération de classement, avec limitation $ranking_limit
+    // Récupération de classement, avec limitation $ranking_limit passée en paramètre
     $top_ranking = $this->get_ranking($ranking_limit);
     // Initialisation du classement du joueur
     $is_ranked = 0;
@@ -94,10 +96,10 @@ class Datas{
   }
 }
 
-// Création d'un objet Datas
+// Création d'une instance de la classe Datas
 $datas = new Datas();
 
-// Récupération des paramètres POST transmis par memory.js
+// Récupération des paramètres POST transmis par common.js
 
 // Si la variable POST 'ranking' existe
 if(isset($_POST['ranking'])){
@@ -107,7 +109,7 @@ if(isset($_POST['ranking'])){
 
   // Entête indiquant au navigateur que l'on renvoie du JSON
   header('Content-Type: application/json');
-  // Écriture en JSON du résultat de la requête
+  // Renvoi du résultat de la requête en JSON 
   echo json_encode($result);
 }
 // Si la variable POST 'score' existe
@@ -119,7 +121,7 @@ else if(isset($_POST['score']))
 
   // Entête indiquant au navigateur que l'on renvoie du texte
   header('Content-Type: text/html; charset=UTF-8');
-  // Écriture du classement du joueur
+  // Renvoi du classement du joueur
   echo $ranking;
 }
 ?>
