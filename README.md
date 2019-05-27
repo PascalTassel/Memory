@@ -57,8 +57,7 @@ const $progress = {
 
 const $alert = {
   'elem' :              '#alert',     // Élément du DOM correspondant à l'alerte
-  'display_ranking' :   true,         // Affichage des meilleurs scores en début de partie
-  'ranking_duration' :  6             // Durée d'affichage des meilleurs scores en début de partie (sec.)
+  'display_ranking' :   true         // Affichage des meilleurs scores en début de partie
 };
 
 const $datas = {
