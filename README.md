@@ -1,5 +1,5 @@
 # Memory
-Test d'évaluation d'un développement full stack à travers la création d'un memory.
+Développement d'un jeu de mémoire en Php, JavaScript et MySql.
 
 ## Pré-requis
 ```
