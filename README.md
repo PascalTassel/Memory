@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Memory game
 My first achievement with node.js, have fun !
 
@@ -14,11 +15,11 @@ Working with **npm 6.14.8 and node v12.18.4**.
 
 The build files used are pretty simple, and are also documented well. In order to run the project follow the steps below. *First make sure node and npm are installed and up to date*
     
-    1.  **git clone** https://github.com/PascalTassel/Memory.git
-    1.  **cd** memory
-    1.  **npm install**
-    1.  **npm start**
-    1.  *Browse to localhost:3000*
+1.  **git clone** https://github.com/PascalTassel/Memory.git
+1.  **cd** memory
+1.  **npm install**
+1.  **npm start**
+1.  *Browse to localhost:3000*
 
 ## Settings
 Edit **src/index.js" for game settings.
