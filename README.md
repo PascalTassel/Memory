@@ -21,4 +21,4 @@ The build files used are pretty simple, and are also documented well. In order t
 1.  *Browse to localhost:3000*
 
 ## Settings
-Edit **src/index.js" for game settings.
+Edit **src/index.js** for game settings.
