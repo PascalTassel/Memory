@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content="Test d'évaluation d'un développement full stack à travers la création d'un memory.")
+    link(rel='stylesheet', href='/css/memory.css')
+  
+  body
+    header.
+      #[strong Memory] game #[small with Node.js]
+    
+    section
+      ul(id='cards')
+      
+    footer
+      div(id='count-up', class='counter').
+        #[span(class='mins') 00] : 
+        #[span(class='secs') 00]
+      div(id='progress').
+        #[span(class='bar')]
+      div(id='duration', class='counter').
+        #[span(class='mins')] : 
+        #[span(class='secs')]
+    
+    div(id='overlay')
+      div(id='alert')
+        div(class='alert-body')
+        div(class='alert-footer')
+      
+    script(src="/js/memory.js")
+    

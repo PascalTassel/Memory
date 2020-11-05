@@ -1,0 +1,125 @@
+#overlay{
+  position: fixed;
+  top: -100vh;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  background-color: $alert-overlay-bg;
+  opacity: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: opacity 400ms;
+
+  #alert{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    min-height: 100px;
+    max-height: 300px;
+    width: auto;
+    max-width: 300px;
+    margin: 10px;
+    padding: 10px;
+    font-size: .85rem;
+    text-align: center;
+    overflow-y: auto;
+    background-color: $alert-bg-color;
+    border-radius: 3px;
+    color: $alert-color;
+    opacity: 0;
+    box-shadow: $alert-box-shadow;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: transform 400ms;
+    
+    &.scores{
+      max-width: 500px;
+    }
+
+    @media (min-width: 320px){
+      margin: 20vh auto 0;
+      padding: 20px 10px;
+    }
+
+    h1{
+      margin-bottom: 1em;
+      font-size: 1.2em;
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.42rem;
+
+      th,
+      td{
+        padding: .5em;
+      }
+      tbody{
+        tr{
+          border-top: 1px solid rgba($alert-color, .2);
+
+          &:nth-child(odd){
+            background-color: rgba($alert-color, .1);
+          }
+        }
+
+        td{
+          text-align: left;
+          
+          &.rank{
+            width: 2rem;
+          }
+          &.date{
+            width: 10rem;
+            
+            small{
+              opacity: .7;
+            }
+          }
+          &:last-child{
+            text-align: right;
+            width: 4rem;
+          }
+        }
+      }
+    }
+
+    button{
+      -webkit-appearance: none;
+      padding: .3em 2em;
+      background-color: $card-back-bg-color;
+      border: 0;
+      border-radius: 3px;
+      color: rgba(255, 255, 255, .9);
+      cursor: pointer;
+      transition: 240ms;
+
+      &:hover{
+        background-color: darken($card-back-bg-color, 10%);
+        color: #fff;
+      }
+      
+      &.hide{
+        display: none;
+      }
+    }
+
+    & > :last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  &.show{
+    top: 0;
+    opacity: 1;
+
+    #alert{
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+}

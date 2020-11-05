@@ -1,0 +1,18 @@
+.counter{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $counter-color;
+  text-shadow: $counter-text-shadow;
+  white-space: nowrap;
+
+  &#count-up{
+    width: 8rem;
+    margin-right: 1rem;
+    text-align: right;
+  }
+
+  &#duration{
+    width: 5rem;
+    margin-left: 1rem;
+  }
+}
