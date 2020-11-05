@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Memory game
 My first achievement with node.js, have fun !
 
