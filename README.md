@@ -6,7 +6,7 @@ Working with **npm 6.14.8 and node v12.18.4**.
 
 ## Description ##
 
-* Game written in Node.js, HTML5 and CSS3.
+* Responsive game written in Node.js, HTML5 and CSS3.
 * Author: Pascal Tassel
     
 *This assumes an elementary knowledge of node.js and how npm works with the package.json file* (basically what the "dependencies" are and how the "scripts" are called when the npm command is run in the same directory). It also assumes that node, npm, and git are installed.
