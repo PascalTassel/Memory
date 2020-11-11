@@ -21,3 +21,4 @@ The build files used are pretty simple, and are also documented well. In order t
 
 ## Settings
 Edit **src/index.js** for game settings.
+Scores are stored in **src/scores.json**.
