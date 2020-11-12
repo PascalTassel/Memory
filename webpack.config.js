@@ -39,7 +39,7 @@ let config = {
     minimize: true,
     minimizer: [
       new TerserPlugin(),
-    ],
+    ]
   }
 };
 
